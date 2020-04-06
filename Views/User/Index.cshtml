@@ -1,0 +1,41 @@
+@model NotesApp.Dtos.UserWithTokenDto
+@{
+    ViewBag.UserId = Model.Id;
+}
+
+<h1>@(Model.Name)'s Notes</h1>
+<p>
+    <button id="filter-complete-button">
+        Show Complete
+    </button>
+    <button id="filter-todo-button">
+        Show To-Do
+    </button>
+    <button id="show-all-button">
+        Show all
+    </button>
+</p>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">Delete</th>
+            <th scope="col">Note</th>
+            <th scope="col">Complete</th>
+        </tr>
+    </thead>
+    <tbody id="table"></tbody>
+</table>
+
+<button id="create-note-button">
+    Create Note
+</button>
+<input value="New Note" />
+
+@section scripts{
+    <script>
+        sessionStorage.setItem("userId", "@Model.Id");
+        sessionStorage.setItem("token", "@Model.Token");
+    </script>
+    <script src="~/scripts/Notes.js" asp-append-version="true"></script>
+}   

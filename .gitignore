@@ -1,0 +1,8 @@
+.vscode
+appsettings*
+bin
+obj
+node_modules
+yarn.lock
+Properties
+.config

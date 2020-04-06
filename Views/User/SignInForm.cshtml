@@ -1,0 +1,27 @@
+﻿@using NotesApp.Dtos
+@model NotesApp.Dtos.SignInDto
+@{
+    ViewData["Title"] = "Sign In";
+}
+
+<h1>Sign In</h1>
+
+<form asp-controller="User" asp-action="SignIn" method="post">
+    @if (ViewBag.UserNotFound != null && ViewBag.UserNotFound)
+    {
+        <span class="field-validation-error" style="color: red">The user was not found, please check that you entered the password correctly</span>
+    }
+    <div class="form-group">
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Email, null, new { style = "color: red" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Password, null, new { style = "color: red" })
+    </div>
+    <div class="form-group">
+        <button type="submit" formmethod="post">Sign in</button>
+    </div>
+</form>

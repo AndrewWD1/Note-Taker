@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    ViewBag.SignedIn = false;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Note Taker</h1>
+    <p>A simple site for you to store your thoughts or to-do list. </p>
+    <br />
+    <br />
+</div>
+<div id="table-window">
+    <p>
+        <button id="filter-complete-button">
+            Show Complete
+        </button>
+        <button id="filter-todo-button">
+            Show To-Do
+        </button>
+        <button id="show-all-button">
+            All
+        </button>
+    </p>
+</div>
+
+@section scripts{
+    <script src="~/scripts/Home.js" asp-append-version="true"></script>
+}

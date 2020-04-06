@@ -1,0 +1,24 @@
+{
+  "name": "webapplication1",
+  "version": "1.0.0",
+  "description": "A asp.net application for note taking.",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently \"tsc --w\" \"dotnet watch run\"",
+    "tsc": "tsc --w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndrewWD1/Note-Taker.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndrewWD1/Note-Taker/issues"
+  },
+  "homepage": "https://github.com/AndrewWD1/Note-Taker#readme",
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "typescript": "^3.8.3"
+  }
+}
