@@ -21,6 +21,7 @@
         @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.Password, null, new { style = "color: red" })
     </div>
+    @Html.AntiForgeryToken()
     <div class="form-group">
         <button type="submit" formmethod="post">Sign in</button>
     </div>

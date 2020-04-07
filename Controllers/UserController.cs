@@ -44,6 +44,7 @@ namespace NotesApp.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> SignIn([FromForm] SignInDto signInDto)
         {
             if (!ModelState.IsValid)
